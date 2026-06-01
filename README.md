@@ -1,98 +1,124 @@
-📦 Base MCP
+# Base MCP (Minimal Context Protocol)
 
+A lightweight and extensible implementation of a Minimal Context Protocol (MCP) in JavaScript.
+Built and maintained by [sirfitoo10](https://github.com/sirfitoo10).
 
+---
 
+## ✨ Features
 
+* Simple context management system
+* Dynamic tool registration and execution
+* Lightweight and easy to extend
+* Built with modern ES Modules
 
+---
 
-A lightweight and extensible implementation of the Model Context Protocol (MCP), designed to support AI agents, tool integrations, and context-aware systems.
+## 📁 Project Structure
 
-🚀 Overview
-
-Base MCP provides a simple foundation for building AI-powered systems that require structured context handling and external tool interaction. It is designed with flexibility and scalability in mind, making it suitable for both experimentation and production-oriented prototypes.
-
-🧠 Core Concepts
-Context Management
-Handles structured input and maintains conversation or execution state.
-Tool Interface
-Provides a consistent way to integrate external functions and APIs.
-Protocol Layer
-Defines how data flows between components in a standardized format.
-📂 Project Structure
+```
 base-mcp/
 │── src/
-│   ├── core/        # Core MCP logic
-│   ├── tools/       # Tool and API integrations
-│   └── utils/       # Utility functions
+│   ├── core/
+│   │   └── mcp.js
+│   ├── tools/
+│   │   └── echoTool.js
 │
-│── examples/        # Usage examples
-│── tests/           # Unit tests
+│── examples/
+│   └── basic.js
+│
+│── package.json
 │── README.md
-│── package.json / requirements.txt
-📋 Requirements
-Node.js >= 18
-or
-Python >= 3.9
-⚙️ Installation
-Clone the repository
+```
+
+---
+
+## ⚙️ Installation
+
+```bash
 git clone https://github.com/sirfitoo10/base-mcp.git
 cd base-mcp
-Install dependencies
-Node.js
 npm install
-Python
-pip install -r requirements.txt
-▶️ Usage
-JavaScript
-import { MCP } from "./src/core/mcp.js";
+```
 
-const mcp = new MCP();
+---
 
-mcp.addContext("user", "Hello AI!");
-const response = await mcp.run();
+## 🚀 Usage
 
-console.log(response);
-// Example output:
-// "Hello! How can I assist you today?"
-Python
-from src.core.mcp import MCP
+Run the example:
 
-mcp = MCP()
-mcp.add_context("user", "Hello AI!")
+```bash
+node examples/basic.js
+```
 
-response = mcp.run()
-print(response)
+Expected output:
 
-# Example output:
-# "Hello! How can I assist you today?"
-🔌 Features
-Basic context handling
-Modular architecture
-Easy to extend
-Designed for tool integration
-Clean and minimal structure
-💡 Use Cases
-AI chatbots with external tools
-LLM-based automation systems
-Context-aware AI agents
-API orchestration with AI
-🛠️ Roadmap
-Tool execution system
-Plugin architecture
-Persistent memory support
-Multi-agent coordination
-🤝 Contributing
+```
+Echo: Hello MCP!
+Tool response: Hello from tool
+```
 
-Contributions are welcome.
+---
 
-Fork the repository
-Create a new branch
-Commit your changes
-Submit a pull request
-📄 License
+## 🧠 How It Works
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+### Context Handling
 
-👤 Author
+```js
+mcp.addContext("user", "Hello MCP!");
+```
 
-Created by https://github.com/sirfitoo10
+---
+
+### Tool Registration
+
+```js
+mcp.registerTool("echo", echoTool);
+```
+
+---
+
+### Tool Execution
+
+Command format:
+
+```
+tool:<toolName> <arguments>
+```
+
+Example:
+
+```
+tool:echo Hello from tool
+```
+
+---
+
+## 🔌 Example Tool
+
+```js
+export async function echoTool(input) {
+  return `Tool response: ${input}`;
+}
+```
+
+---
+
+## 🛠 Future Improvements
+
+* OpenAI / LLM integration
+* Persistent memory (file/database)
+* More advanced tools (calculator, API fetch, etc.)
+* CLI or web interface
+
+---
+
+## 👨‍💻 Author
+
+**GitHub:** https://github.com/sirfitoo10
+
+---
+
+## 📄 License
+
+MIT License
