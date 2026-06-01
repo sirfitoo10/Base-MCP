@@ -107,5 +107,4 @@ Add memory (store context in file/database)
 Add more tools (calculator, API fetcher, etc.)
 Add command parser
 Build CLI or web interface
-🧠 Summary
 
