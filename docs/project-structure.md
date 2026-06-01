@@ -114,4 +114,3 @@ You now have:
 A working MCP core
 A simple tool system
 A runnable example
-A project ready for GitHub
