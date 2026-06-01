@@ -109,8 +109,3 @@ Add command parser
 Build CLI or web interface
 🧠 Summary
 
-You now have:
-
-A working MCP core
-A simple tool system
-A runnable example
